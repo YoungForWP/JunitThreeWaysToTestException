@@ -1,6 +1,7 @@
 package com.tw.test;
 
 import com.tw.MyException;
+import org.junit.Rule;
 import org.junit.Test;
 
 import static org.junit.Assert.assertFalse;
@@ -19,4 +20,10 @@ public class MyExceptionTest {
             assertTrue(e instanceof ArithmeticException);
         }
     }
+
+    @Test(expected = ArithmeticException.class)
+    public void test_exception_method_2() throws Exception {
+        myException.isNegative(-3);
+    }
+
 }
